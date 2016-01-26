@@ -1,0 +1,15 @@
+{
+    "name": "com.ubuntu.developer.username.programaprueba",
+    "description": "description of programaprueba",
+    "framework": "ubuntu-sdk-14.04-qml",
+    "architecture": "all",
+    "title": "programaprueba",
+    "hooks": {
+        "programaprueba": {
+            "apparmor": "programaprueba.json",
+            "desktop": "programaprueba.desktop"
+        }
+    },
+    "version": "0.1",
+    "maintainer": ""
+}
