@@ -4,15 +4,18 @@
  * found in the COPYING file.
  */
 #include <iostream>
+#include <iostream>
 #include <alproxies/almotionproxy.h>
 #include <alproxies/alrobotpostureproxy.h>
-#include <alvision/alimage.h>
-#include <alvision/alvisiondefinitions.h>
 
 #include <opencv2/opencv.hpp>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
+#include <alproxies/alvideodeviceproxy.h>
+#include <alvision/alimage.h>
+#include <alvision/alvisiondefinitions.h>
+
 
 using namespace std;
 using namespace AL;
@@ -26,15 +29,22 @@ int main(int argc, char *argv[])
     AL::ALRobotPostureProxy posture(ip, 9559);
     AL::ALMotionProxy motion(ip,9559);
 
+
+
     posture.goToPosture("Crouch",0.5);
     posture.goToPosture("StandInit",0.5);
 
-    //Mat src;
+    char key = 'x';
+    Mat src;
 
-    //VideoCapture(1);
-    //const string clientName = cameraProxy.subscribe("test", AL::kQVGA, AL::kBGRColorSpace,30);
+    VideoCapture(1);
+    const string clientName = cameraProxy.subscribe("test", AL::kQVGA, AL::kBGRColorSpace,30);
 
-    //Mat src_gray;
+    while(key != 27){
+
+
+    }
+
 
   return 0;
 }
